@@ -2,6 +2,8 @@
 FROM python:3.8.12-buster
 
 # copy files to the /app folder in the container
+COPY Pipfile /app/Pipfile
+COPY Pipfile.lock /app/Pipfile.lock
 COPY iris.py /app/iris.py
 
 # set the working directory in the container to be /app
