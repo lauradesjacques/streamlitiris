@@ -20,4 +20,4 @@ EXPOSE 9000
 
 # execute the command python main.py (in the WORKDIR) to start the app
 
-CMD ["streamlit", "run", "streamlit_app.py","--server.port", "9000"]
+CMD ["streamlit", "run", "iris.py","--server.port", "9000"]
