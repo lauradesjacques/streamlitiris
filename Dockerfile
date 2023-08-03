@@ -6,6 +6,7 @@ COPY Pipfile /app/Pipfile
 COPY Pipfile.lock /app/Pipfile.lock
 COPY iris.py /app/iris.py
 
+
 # set the working directory in the container to be /app
 WORKDIR /app
 
@@ -16,4 +17,4 @@ RUN pipenv install --system --deploy --ignore-pipfile
 RUN pipenv install streamlit
 
 # execute the command python main.py (in the WORKDIR) to start the app
-CMD uvicorn app:app --host 0.0.0.0 --port $PORT
+CMD streamlit run iris.py --host 0.0.0.0 --port $PORT
