@@ -16,5 +16,8 @@ RUN pip install pipenv
 RUN pipenv install --system --deploy --ignore-pipfile
 RUN pipenv install streamlit
 
+EXPOSE 9000
+
 # execute the command python main.py (in the WORKDIR) to start the app
-CMD streamlit run iris.py --host 0.0.0.0 --port $PORT
+
+CMD ["streamlit", "run", "streamlit_app.py","--server.port", "9000"]
